@@ -1,0 +1,7 @@
+/* 03-componentes / selos.css — etiquetas NOVO, LANÇAMENTO, EDIÇÃO ESPECIAL, PROMO */
+.selo { font-family: var(--f-mono); font-size: .64rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: 5px 9px; border-radius: 4px; background: var(--branco); color: var(--g-950); }
+.selo--promo { background: var(--alerta); color: #fff; }
+.selo--novo { background: var(--destaque); color: var(--destaque-texto); }
+.selo--lancamento { background: var(--branco); }
+.selo--especial { background: transparent; color: var(--destaque); border: 1px solid var(--destaque); }
+.selo--esgotado { background: var(--g-600); color: var(--c-300); }

@@ -1,0 +1,21 @@
+/* 03-componentes / botoes.css */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  height: 52px; padding: 0 28px; border-radius: 999px;
+  font-weight: 800; font-size: .86rem; letter-spacing: .08em; text-transform: uppercase;
+  border: 2px solid transparent; transition: var(--transicao); white-space: nowrap;
+}
+.btn svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; transition: var(--transicao); }
+.btn--primario { background: var(--destaque); color: var(--destaque-texto); }
+.btn--primario:hover { background: var(--destaque-forte); transform: translateY(-2px); }
+.btn--primario:hover svg { transform: translateX(4px); }
+.btn--contorno { border-color: var(--g-600); color: var(--branco); }
+.btn--contorno:hover { border-color: var(--branco); }
+.btn--whats { background: #25d366; color: #052e16; }
+.btn--whats:hover { filter: brightness(1.08); transform: translateY(-2px); }
+.btn--bloco { width: 100%; }
+.btn--sm { height: 40px; padding: 0 18px; font-size: .75rem; }
+.btn[disabled] { opacity: .4; cursor: not-allowed; transform: none; }
+.btn.carregando { pointer-events: none; opacity: .7; }
+.btn.carregando::after { content: ""; width: 16px; height: 16px; border: 2px solid currentColor; border-top-color: transparent; border-radius: 50%; animation: girar .7s linear infinite; }
+@keyframes girar { to { transform: rotate(360deg); } }

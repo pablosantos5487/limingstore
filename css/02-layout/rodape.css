@@ -1,0 +1,20 @@
+/* 02-layout / rodape.css */
+.rodape { background: var(--g-900); border-top: 1px solid var(--g-700); padding-top: 72px; margin-top: 40px; }
+.rodape__grade { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 40px; padding-bottom: 48px; }
+.rodape h4 { font-family: var(--f-mono); font-size: .75rem; letter-spacing: .16em; text-transform: uppercase; color: var(--destaque); margin-bottom: 16px; }
+.rodape li { margin-bottom: 10px; }
+.rodape li a { color: var(--c-300); transition: var(--transicao); }
+.rodape li a:hover { color: var(--branco); }
+.rodape__marca p { color: var(--c-400); margin-top: 14px; max-width: 34ch; }
+.rodape__pagamentos { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.rodape__pagamentos span { font-family: var(--f-mono); font-size: .72rem; padding: 6px 10px; border: 1px solid var(--g-600); border-radius: var(--raio-sm); color: var(--c-300); }
+.rodape__redes { display: flex; gap: 10px; margin-top: 20px; }
+.rodape__redes a { width: 42px; height: 42px; border: 1px solid var(--g-600); border-radius: 50%; display: grid; place-items: center; transition: var(--transicao); }
+.rodape__redes a:hover { background: var(--destaque); color: var(--destaque-texto); border-color: var(--destaque); }
+.rodape__redes svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.8; }
+.rodape__base { border-top: 1px solid var(--g-700); padding-block: 22px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: .8rem; color: var(--c-400); }
+
+/* Botão flutuante do WhatsApp */
+.whats-flutuante { position: fixed; right: 20px; bottom: 20px; z-index: 40; width: 58px; height: 58px; border-radius: 50%; background: #25d366; color: #052e16; display: grid; place-items: center; box-shadow: var(--sombra); transition: var(--transicao); }
+.whats-flutuante:hover { transform: scale(1.08); }
+.whats-flutuante svg { width: 30px; height: 30px; fill: currentColor; }

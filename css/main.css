@@ -1,0 +1,37 @@
+/* ==========================================================================
+   LIMING STORE — CSS PRINCIPAL
+   Este arquivo só importa os demais, NA ORDEM CORRETA (base → layout →
+   componentes → páginas → responsivo). Para achar um estilo, procure
+   pela pasta correspondente.
+   ========================================================================== */
+
+/* 01 — BASE: variáveis (cores, fontes), reset, tipografia, utilidades */
+@import url("01-base/variaveis.css");
+@import url("01-base/reset.css");
+@import url("01-base/tipografia.css");
+@import url("01-base/utilidades.css");
+
+/* 02 — LAYOUT: estrutura que se repete em todas as páginas */
+@import url("02-layout/container.css");
+@import url("02-layout/barra-superior.css");
+@import url("02-layout/cabecalho.css");
+@import url("02-layout/rodape.css");
+
+/* 03 — COMPONENTES: peças reutilizáveis */
+@import url("03-componentes/botoes.css");
+@import url("03-componentes/formularios.css");
+@import url("03-componentes/card-produto.css");
+@import url("03-componentes/gaveta-carrinho.css");
+@import url("03-componentes/toast.css");
+@import url("03-componentes/selos.css");
+
+/* 04 — PÁGINAS: estilos exclusivos de cada página */
+@import url("04-paginas/home.css");
+@import url("04-paginas/catalogo.css");
+@import url("04-paginas/produto.css");
+@import url("04-paginas/carrinho.css");
+@import url("04-paginas/institucional.css");
+
+/* 05 — RESPONSIVO: ajustes para tablet e celular (sempre por último) */
+@import url("05-responsivo/tablet.css");
+@import url("05-responsivo/celular.css");

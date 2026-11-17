@@ -1,0 +1,25 @@
+/* 01-base / tipografia.css */
+.titulo-xl, .titulo-lg, .titulo-md {
+  font-family: var(--f-titulo);
+  text-transform: uppercase;
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+}
+.titulo-xl { font-size: clamp(3rem, 9vw, 7.5rem); }
+.titulo-lg { font-size: clamp(2rem, 5vw, 3.6rem); }
+.titulo-md { font-size: clamp(1.4rem, 3vw, 2rem); }
+
+.sobretitulo {
+  font-family: var(--f-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--destaque);
+}
+.texto-suave { color: var(--c-300); }
+.texto-pequeno { font-size: 0.85rem; color: var(--c-400); }
+
+/* Preços — destaque comercial */
+.preco { font-family: var(--f-mono); font-weight: 700; letter-spacing: -0.02em; }
+.preco-antigo { color: var(--c-400); text-decoration: line-through; font-size: 0.85em; font-weight: 400; }

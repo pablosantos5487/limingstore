@@ -1,0 +1,20 @@
+/* 05-responsivo / tablet.css — até 1024px */
+@media (max-width: 1024px) {
+  .secao { padding-block: 64px; }
+  .grade-produtos { grid-template-columns: repeat(3, 1fr); }
+  .menu { display: none; }
+  .btn-menu-mobile { display: grid; }
+  .busca { max-width: none; min-width: 0; }
+  .rodape__grade { grid-template-columns: 1fr 1fr; }
+  .escalacao { grid-template-columns: repeat(2, 1fr); }
+  .hero__camisa { right: 2%; width: 40vw; opacity: .9; }
+  .moda { grid-template-columns: 1fr; }
+  .avaliacoes { grid-template-columns: 1fr 1fr; }
+  .insta { grid-template-columns: repeat(3, 1fr); }
+  .catalogo { grid-template-columns: 220px 1fr; gap: 24px; }
+  .catalogo .grade-produtos { grid-template-columns: repeat(2, 1fr); }
+  .produto { grid-template-columns: 1fr; gap: 32px; }
+  .galeria { position: static; }
+  .carrinho { grid-template-columns: 1fr; }
+  .resumo { position: static; }
+}

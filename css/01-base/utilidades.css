@@ -1,0 +1,23 @@
+/* 01-base / utilidades.css — classes pequenas de apoio */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+.oculto { display: none !important; }
+.centro { text-align: center; }
+.mt-1 { margin-top: 8px; } .mt-2 { margin-top: 16px; } .mt-3 { margin-top: 24px; } .mt-4 { margin-top: 40px; }
+
+/* Animação discreta de entrada (ativada por js/nucleo/animacoes.js) */
+.revelar { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+.revelar.visivel { opacity: 1; transform: none; }
+
+/* Linha de campo de futebol usada como divisor */
+.divisor-campo {
+  height: 1px; border: 0; margin: 0;
+  background: linear-gradient(90deg, transparent, var(--g-600) 20%, var(--g-600) 80%, transparent);
+  position: relative;
+}
+.divisor-campo::after {
+  content: ""; position: absolute; left: 50%; top: -9px; width: 18px; height: 18px;
+  transform: translateX(-50%); border: 1px solid var(--g-600); border-radius: 50%; background: var(--g-950);
+}

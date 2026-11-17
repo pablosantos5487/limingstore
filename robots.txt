@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /carrinho.html
+Sitemap: https://SEU-USUARIO.github.io/liming-store/sitemap.xml

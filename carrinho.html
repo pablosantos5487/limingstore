@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carrinho e Finalização do Pedido | Liming Store</title>
+  <meta name="description" content="Revise seu carrinho, calcule o frete e finalize seu pedido na Liming Store.">
+  <meta name="robots" content="noindex,follow">
+  <meta name="theme-color" content="#0a0b0d">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body data-pagina="carrinho">
+  <div id="barra-superior"></div>
+  <div id="cabecalho"></div>
+
+  <main>
+    <div class="pagina-topo"><div class="container">
+      <nav class="migalhas" aria-label="Você está em"><a href="index.html">Início</a> / <span>Carrinho</span></nav>
+      <h1 class="titulo-lg">Seu carrinho</h1>
+    </div></div>
+
+    <div class="container">
+      <!-- Carrinho vazio -->
+      <div class="vazio oculto" id="carrinho-vazio" style="padding-block:96px">
+        <svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <p class="titulo-md" style="color:var(--branco)">Seu carrinho está vazio</p>
+        <a class="btn btn--primario mt-3" href="catalogo.html">Explorar coleção</a>
+      </div>
+
+      <!-- Carrinho com itens -->
+      <div class="carrinho" id="carrinho-conteudo">
+        <div>
+          <div class="carrinho__lista" id="carrinho-lista"></div>
+          <button class="item__remover" id="limpar-carrinho" style="margin:16px 0 0">Esvaziar carrinho</button>
+
+          <!-- Dados para fechar o pedido -->
+          <section class="checkout" aria-labelledby="t-checkout">
+            <h2 class="titulo-md" id="t-checkout">Dados para entrega</h2>
+            <form id="form-pedido" novalidate>
+              <div class="form-grade">
+                <div class="campo largo"><label for="f-nome">Nome completo</label><input id="f-nome" autocomplete="name"><span class="msg-erro"></span></div>
+                <div class="campo"><label for="f-telefone">WhatsApp / telefone</label><input id="f-telefone" type="tel" autocomplete="tel" placeholder="(00) 00000-0000"><span class="msg-erro"></span></div>
+                <div class="campo"><label for="f-email">E-mail</label><input id="f-email" type="email" autocomplete="email"><span class="msg-erro"></span></div>
+                <div class="campo largo"><label for="f-rua">Rua</label><input id="f-rua" autocomplete="address-line1"><span class="msg-erro"></span></div>
+                <div class="campo"><label for="f-numero">Número</label><input id="f-numero"><span class="msg-erro"></span></div>
+                <div class="campo"><label for="f-complemento">Complemento (opcional)</label><input id="f-complemento"></div>
+                <div class="campo"><label for="f-bairro">Bairro</label><input id="f-bairro"><span class="msg-erro"></span></div>
+                <div class="campo"><label for="f-cidade">Cidade</label><input id="f-cidade" autocomplete="address-level2"><span class="msg-erro"></span></div>
+                <div class="campo"><label for="f-uf">UF</label><input id="f-uf" maxlength="2" autocomplete="address-level1"><span class="msg-erro"></span></div>
+                <div class="campo"><label for="f-pagamento">Forma de pagamento</label>
+                  <select id="f-pagamento"><option value="">Selecione</option><option>Pix</option><option>Cartão de crédito</option><option>Boleto</option></select><span class="msg-erro"></span></div>
+                <div class="campo largo"><label for="f-obs">Observações (opcional)</label><textarea id="f-obs" style="min-height:80px"></textarea></div>
+                <div class="campo largo"><label style="text-transform:none;font-weight:500;display:flex;gap:10px;align-items:flex-start">
+                  <input id="f-aceite" type="checkbox" style="width:auto;margin-top:4px;accent-color:var(--destaque)"> <span>Li e aceito a <a href="politicas.html#privacidade" target="_blank" style="color:var(--destaque);text-decoration:underline">política de privacidade</a> e a <a href="politicas.html#trocas" target="_blank" style="color:var(--destaque);text-decoration:underline">política de trocas</a>.</span></label>
+                  <span class="msg-erro"></span></div>
+              </div>
+              <button class="btn btn--whats btn--bloco mt-3" id="btn-finalizar" type="submit">Enviar pedido pelo WhatsApp</button>
+              <p class="aviso-pedido mt-2">Seu pedido é enviado ao nosso atendimento, que confirma o estoque e envia o link de pagamento. A compra só é considerada concluída após a confirmação do pagamento.</p>
+              <div class="form-aviso form-aviso--ok mt-2 oculto" id="aviso-enviado">Pedido enviado ao atendimento. Aguarde nosso retorno com a confirmação e o pagamento.</div>
+            </form>
+          </section>
+        </div>
+
+        <!-- Resumo -->
+        <aside class="resumo" aria-label="Resumo do pedido">
+          <h2 class="titulo-md">Resumo</h2>
+          <form class="mini-form" id="form-frete" novalidate>
+            <input id="cep" inputmode="numeric" maxlength="9" placeholder="CEP para calcular o frete" aria-label="CEP">
+            <button type="submit">Calcular</button>
+          </form>
+          <form class="mini-form" id="form-cupom" novalidate>
+            <input id="cupom" placeholder="Cupom de desconto" aria-label="Cupom" autocapitalize="characters">
+            <button type="submit">Aplicar</button>
+          </form>
+          <p class="texto-pequeno oculto" id="cupom-ativo">Cupom <b id="cupom-ativo-nome"></b> aplicado · <button type="button" id="remover-cupom" style="text-decoration:underline">remover</button></p>
+
+          <div class="resumo__linha"><span>Subtotal</span><span class="preco" id="res-subtotal"></span></div>
+          <div class="resumo__linha resumo__linha--desc oculto" id="res-desconto-linha"><span id="res-cupom-nome">Desconto</span><span class="preco" id="res-desconto"></span></div>
+          <div class="resumo__linha"><span>Frete <small class="texto-pequeno" id="res-prazo"></small></span><span class="preco" id="res-frete"></span></div>
+          <div class="resumo__linha resumo__total"><span>Total</span><span class="preco" id="res-total"></span></div>
+          <p class="texto-pequeno" id="res-pix"></p>
+          <p class="texto-pequeno" id="res-parcelas"></p>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <div id="rodape"></div>
+
+  <script src="js/config/loja.config.js"></script>
+  <script src="js/dados/categorias.js"></script>
+  <script src="js/dados/produtos.js"></script>
+  <script src="js/nucleo/utils.js"></script>
+  <script src="js/nucleo/armazenamento.js"></script>
+  <script src="js/nucleo/arte-produto.js"></script>
+  <script src="js/nucleo/carrinho.js"></script>
+  <script src="js/nucleo/favoritos.js"></script>
+  <script src="js/nucleo/ui.js"></script>
+  <script src="js/nucleo/card-produto.js"></script>
+  <script src="js/nucleo/gaveta.js"></script>
+  <script src="js/nucleo/layout.js"></script>
+  <script src="js/paginas/carrinho.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

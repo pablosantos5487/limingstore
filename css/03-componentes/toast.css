@@ -1,0 +1,6 @@
+/* 03-componentes / toast.css — mensagens de confirmação e erro */
+.toasts { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 100; display: grid; gap: 10px; width: min(92vw, 420px); pointer-events: none; }
+.toast { padding: 14px 18px; border-radius: var(--raio-sm); background: var(--g-700); border-left: 4px solid var(--destaque); box-shadow: var(--sombra); font-size: .9rem; animation: toast-in .35s ease; pointer-events: auto; }
+.toast--erro { border-left-color: var(--alerta); }
+.toast--ok { border-left-color: var(--ok); }
+@keyframes toast-in { from { opacity: 0; transform: translateY(14px); } }

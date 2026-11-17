@@ -1,0 +1,11 @@
+/* 02-layout / barra-superior.css — faixa de mensagens rolando (marquee) */
+.barra-superior {
+  background: var(--destaque); color: var(--destaque-texto);
+  font-family: var(--f-mono); font-size: .72rem; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase; overflow: hidden; white-space: nowrap;
+}
+.barra-superior__trilho { display: inline-flex; padding-block: 9px; animation: rolar 34s linear infinite; }
+.barra-superior__trilho span { padding-inline: 28px; display: inline-flex; align-items: center; gap: 56px; }
+.barra-superior__trilho span::after { content: "⚽"; font-size: .8rem; }
+.barra-superior:hover .barra-superior__trilho { animation-play-state: paused; }
+@keyframes rolar { to { transform: translateX(-50%); } }

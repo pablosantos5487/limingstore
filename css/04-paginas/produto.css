@@ -1,0 +1,47 @@
+/* 04-paginas / produto.css */
+.produto { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; padding-block: 40px 72px; align-items: start; }
+.galeria { display: grid; grid-template-columns: 84px 1fr; gap: 14px; position: sticky; top: calc(var(--altura-cabecalho) + 20px); }
+.galeria__miniaturas { display: grid; gap: 10px; align-content: start; }
+.miniatura { aspect-ratio: 1; border-radius: var(--raio-sm); border: 1px solid var(--g-600); background: var(--g-800); display: grid; place-items: center; overflow: hidden; transition: var(--transicao); }
+.miniatura svg, .miniatura img { width: 84%; height: 84%; object-fit: contain; }
+.miniatura[aria-current="true"] { border-color: var(--destaque); }
+.galeria__principal { position: relative; aspect-ratio: 1; border-radius: var(--raio); background: radial-gradient(circle at 50% 40%, var(--g-600), var(--g-800) 70%); display: grid; place-items: center; cursor: zoom-in; overflow: hidden; border: 1px solid var(--g-700); }
+.galeria__principal svg, .galeria__principal img { width: 84%; height: 84%; object-fit: contain; filter: drop-shadow(0 24px 24px rgba(0,0,0,.55)); }
+.galeria__dica { position: absolute; bottom: 12px; right: 14px; font-family: var(--f-mono); font-size: .68rem; color: var(--c-400); letter-spacing: .1em; }
+
+.zoom { position: fixed; inset: 0; z-index: 90; background: rgba(0,0,0,.92); display: none; place-items: center; padding: 24px; cursor: zoom-out; }
+.zoom.aberto { display: grid; }
+.zoom svg, .zoom img { width: min(90vw, 760px); height: min(86vh, 760px); object-fit: contain; }
+
+.produto__info .titulo-lg { margin: 10px 0 18px; }
+.produto__precos { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+.produto__precos .preco { font-size: 2.4rem; color: var(--destaque); }
+.produto__desconto { font-family: var(--f-mono); font-size: .8rem; font-weight: 700; background: var(--alerta); color: #fff; padding: 4px 8px; border-radius: 4px; }
+.produto__parcelas { color: var(--c-300); font-size: .92rem; margin-top: 4px; }
+.bloco-opcao { margin-top: 28px; }
+.bloco-opcao__topo { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--c-300); }
+.bloco-opcao__topo button { color: var(--destaque); text-decoration: underline; font-size: .78rem; }
+.tamanhos { display: flex; flex-wrap: wrap; gap: 10px; }
+.tamanho { min-width: 58px; height: 52px; padding: 0 14px; border: 1px solid var(--g-600); border-radius: var(--raio-sm); font-family: var(--f-mono); font-weight: 700; transition: var(--transicao); }
+.tamanho:hover:not([disabled]) { border-color: var(--branco); }
+.tamanho[aria-pressed="true"] { background: var(--destaque); color: var(--destaque-texto); border-color: var(--destaque); }
+.tamanho[disabled] { opacity: .35; text-decoration: line-through; cursor: not-allowed; }
+.estoque-info { margin-top: 12px; font-size: .86rem; min-height: 1.3em; }
+.estoque-info.baixo { color: var(--alerta); }
+.estoque-info.ok { color: var(--ok); }
+.produto__compra { display: grid; grid-template-columns: auto 1fr; gap: 12px; margin-top: 28px; align-items: center; }
+.produto__compra .qtd { margin: 0; height: 52px; }
+.produto__compra .btn--comprar { grid-column: 1 / -1; }
+.erro-tamanho { color: var(--alerta); font-size: .85rem; margin-top: 10px; min-height: 1.2em; }
+.entrega-bloco { margin-top: 32px; padding: 18px; border: 1px solid var(--g-700); border-radius: var(--raio); display: grid; gap: 12px; }
+.entrega-bloco div { display: flex; gap: 12px; font-size: .9rem; color: var(--c-300); }
+.entrega-bloco b { color: var(--branco); }
+.descricao { margin-top: 32px; color: var(--c-300); }
+.descricao h2 { font-family: var(--f-mono); font-size: .76rem; letter-spacing: .16em; text-transform: uppercase; color: var(--destaque); margin-bottom: 12px; }
+
+.modal-tabela { position: fixed; inset: 0; z-index: 90; background: rgba(0,0,0,.75); display: none; place-items: center; padding: 20px; }
+.modal-tabela.aberto { display: grid; }
+.modal-tabela__caixa { background: var(--g-900); border: 1px solid var(--g-600); border-radius: var(--raio); padding: 28px; width: min(100%, 520px); }
+.modal-tabela table { width: 100%; border-collapse: collapse; margin: 18px 0; font-family: var(--f-mono); font-size: .85rem; }
+.modal-tabela th, .modal-tabela td { padding: 10px; border-bottom: 1px solid var(--g-700); text-align: center; }
+.modal-tabela th { color: var(--destaque); }

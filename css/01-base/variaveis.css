@@ -1,0 +1,47 @@
+/* ==========================================================================
+   01-base / variaveis.css
+   PALETA, FONTES E MEDIDAS. Mude aqui e o site inteiro muda.
+   ========================================================================== */
+:root {
+  /* Base grafite */
+  --g-950: #0a0b0d;
+  --g-900: #101216;
+  --g-800: #171a1f;
+  --g-700: #21252c;
+  --g-600: #2d323b;
+
+  /* Cinzas (elementos secundários) */
+  --c-500: #5d6572;
+  --c-400: #8b929d;
+  --c-300: #b5bbc4;
+  --c-200: #d9dde2;
+
+  /* Branco de contraste */
+  --branco: #f5f6f7;
+
+  /* Cor de destaque (botões e chamadas) — "verde-gramado néon" suave */
+  --destaque: #d4f53c;
+  --destaque-forte: #bde31a;
+  --destaque-texto: #0a0b0d; /* texto sobre o destaque */
+
+  /* Estados */
+  --ok: #3ddc84;
+  --alerta: #ff6a4a;
+
+  /* Fontes (carregadas via Google Fonts em cada HTML) */
+  --f-titulo: "Anton", "Impact", sans-serif;
+  --f-texto: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  /* Medidas */
+  --raio: 14px;
+  --raio-sm: 8px;
+  --largura-max: 1280px;
+  --altura-cabecalho: 72px;
+  --sombra: 0 18px 40px -18px rgba(0, 0, 0, 0.7);
+  --transicao: 220ms cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  /* Imagem do banner principal. Para usar foto própria (com direitos):
+     --hero-imagem: url("../assets/img/hero.jpg"); */
+  --hero-imagem: none;
+}

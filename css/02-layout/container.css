@@ -1,0 +1,13 @@
+/* 02-layout / container.css — largura e seções */
+.container { width: 100%; max-width: var(--largura-max); margin-inline: auto; padding-inline: 24px; }
+.secao { padding-block: 88px; }
+.secao-cabeca {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 24px; margin-bottom: 36px; flex-wrap: wrap;
+}
+.secao-cabeca .titulo-lg { margin-top: 8px; }
+.link-ver-tudo {
+  font-family: var(--f-mono); font-size: .8rem; letter-spacing: .12em; text-transform: uppercase;
+  border-bottom: 1px solid var(--destaque); padding-bottom: 4px; color: var(--destaque);
+}
+.grade-produtos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }

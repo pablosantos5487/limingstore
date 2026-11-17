@@ -1,0 +1,16 @@
+/* 03-componentes / formularios.css */
+.campo { display: flex; flex-direction: column; gap: 6px; }
+.campo label { font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--c-300); }
+.campo input, .campo select, .campo textarea {
+  width: 100%; padding: 14px 16px; border-radius: var(--raio-sm);
+  background: var(--g-800); border: 1px solid var(--g-600); transition: var(--transicao);
+}
+.campo textarea { min-height: 120px; resize: vertical; }
+.campo input:focus, .campo select:focus, .campo textarea:focus { border-color: var(--destaque); outline: none; }
+.campo.erro input, .campo.erro select, .campo.erro textarea { border-color: var(--alerta); }
+.campo .msg-erro { color: var(--alerta); font-size: .8rem; min-height: 1em; }
+.form-grade { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-grade .largo { grid-column: 1 / -1; }
+.form-aviso { padding: 14px 16px; border-radius: var(--raio-sm); font-size: .88rem; }
+.form-aviso--erro { background: rgba(255,106,74,.12); border: 1px solid var(--alerta); }
+.form-aviso--ok { background: rgba(61,220,132,.1); border: 1px solid var(--ok); }

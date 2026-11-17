@@ -1,0 +1,59 @@
+/* 05-responsivo / celular.css — até 680px (atenção especial ao mobile) */
+@media (max-width: 680px) {
+  .container { padding-inline: 16px; }
+  .secao { padding-block: 48px; }
+  :root { --altura-cabecalho: 64px; }
+
+  /* Cabeçalho: logo, busca em linha própria, ícones compactos */
+  .cabecalho__linha { flex-wrap: wrap; height: auto; padding-block: 10px; gap: 10px; }
+  .busca { order: 3; flex-basis: 100%; margin: 0; }
+  .logo { margin-right: auto; font-size: 1.45rem; }
+  .logo small { display: none; }
+  .acao-icone--conta { display: none; }
+
+  .grade-produtos { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .card__corpo { padding: 12px; }
+  .card__nome { font-size: .88rem; }
+  .card__precos .preco { font-size: 1.1rem; }
+  .card__acoes { grid-template-columns: 1fr; }
+  .escalacao { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .cat { min-height: 200px; padding: 16px; }
+  .cat__numero { font-size: 6rem; }
+  .cat__arte { width: 64px; }
+  .cat__nome { font-size: 1.3rem; }
+  .cat__desc { display: none; }
+
+  .hero { min-height: auto; }
+  .hero__conteudo { padding-block: 48px 40px; }
+  .hero__camisa { position: relative; right: auto; top: auto; transform: rotate(-6deg); width: 62vw; margin: 8px auto 0; animation: none; }
+  .hero { grid-template-columns: 1fr; }
+  .hero__botoes .btn { width: 100%; }
+  .hero__rodape { gap: 20px; }
+
+  .moda .grade-produtos { grid-template-columns: repeat(2, 1fr); }
+  .avaliacoes { grid-template-columns: 1fr; }
+  .insta { grid-template-columns: repeat(3, 1fr); }
+  .rodape__grade { grid-template-columns: 1fr; gap: 28px; }
+
+  /* Catálogo: filtros viram painel que abre por botão */
+  .catalogo { grid-template-columns: 1fr; }
+  .btn-filtros-mobile { display: inline-flex; }
+  .filtros { display: none; position: fixed; inset: 0; z-index: 85; background: var(--g-900); padding: 24px; overflow-y: auto; align-content: start; }
+  .filtros.aberto { display: grid; }
+  .catalogo .grade-produtos { grid-template-columns: repeat(2, 1fr); }
+
+  /* Produto */
+  .galeria { grid-template-columns: 1fr; }
+  .galeria__miniaturas { grid-template-columns: repeat(4, 1fr); order: 2; }
+  .produto__precos .preco { font-size: 2rem; }
+  .produto__compra { position: sticky; bottom: 0; background: var(--g-950); padding: 12px 0; z-index: 10; margin-inline: 0; }
+
+  /* Carrinho / formulários */
+  .carrinho .item { grid-template-columns: 72px 1fr; }
+  .carrinho .item__img { width: 72px; height: 72px; }
+  .carrinho .item__preco { grid-column: 2; text-align: left; }
+  .form-grade { grid-template-columns: 1fr; }
+  .contato { grid-template-columns: 1fr; gap: 32px; }
+  .valores { grid-template-columns: 1fr; }
+  .whats-flutuante { bottom: 14px; right: 14px; width: 52px; height: 52px; }
+}
