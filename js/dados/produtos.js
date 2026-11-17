@@ -31,8 +31,8 @@ Liming.produtos = [
     preco: 170.0, promo: null, estoque: { P: 0, M: 0, G: 3, GG: 2, XG: 1 }, badge: "especial", vendas: 12, data: "2026-11-16", cores: ["#ffffff", "#1d4ed8"], estilo: "faixa", numero: "10",
     descricao: "Camisa retrô away da França 2002, modelo em edição especial com visual clássico e tecido de qualidade para uso casual ou colecionador.",
     imagens: [
-      "https://photo.yupoo.com/limingstore/cc0519b2e5/small.jpg",
-      "https://photo.yupoo.com/limingstore/bf6aca942a/small.jpg"
+      "assets/img/Fran%C3%A7a%202002.jpg",
+      "assets/img/Fran%C3%A7a%202002%20costas.jpg"
     ] },
   { id: 2, slug: "camisa-clube-a-visitante", nome: "Camisa Clube A — Visitante", grupo: "Clube A", categoria: "camisas", tipo: "camisa",
     preco: 239.9, promo: null, estoque: { P: 0, M: 5, G: 4, GG: 2, XG: 0 }, badge: null, vendas: 61, data: "2026-09-12", cores: ["#f5f6f7", "#c8102e"], estilo: "faixa", numero: "09",
